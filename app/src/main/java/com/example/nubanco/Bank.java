@@ -13,7 +13,7 @@ public class Bank {
     private Double saldo;
     private String numeroConta;
     private String agencia;
-    private String numeroBanco = "0260";
+    private final String numeroBanco = "0260";
 
 
     //VARIÁVEIS CARTÃO DE CRÉDITO
