@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ActivityCartaoCredito">
+
+    <ImageButton
+        android:id="@+id/closeCartaoCredito"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_margin="10dp"
+        android:background="@null"
+        android:backgroundTint="@null"
+        android:scaleType="fitCenter"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#000000"/>
+
+    <TextView
+        android:id="@+id/cartaoFisico"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cartão Físico"
+        android:layout_margin="5dp"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></TextView>
+
+    <ImageView
+        android:id="@+id/image_config_card"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/mycard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cartaoFisico"></ImageView>
+
+    <LinearLayout
+        android:id="@+id/configcard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_config_card">
+
+        <LinearLayout
+            android:id="@+id/configsdd"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:background="@drawable/view_cartao_credito"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="@id/image_config_card">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="20dp"
+                android:text="Nome"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/nomeCartao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:text="nome"
+                android:textColor="@color/black"
+                android:textSize="20dp"></TextView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:text="Número"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/numeroCartao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:text="xxxx xxxx xxxx xxxx"
+                android:textColor="@color/black"
+                android:textSize="20dp"></TextView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:text="Validade"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/validadeCartao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:text="mes / ano"
+                android:textColor="@color/black"
+                android:textSize="20dp"></TextView>
+
+            <View
+                android:id="@+id/view_card"
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+
+            <LinearLayout
+                android:id="@+id/config"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="@id/view_card">
+
+                <LinearLayout
+                    android:id="@+id/config2"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toTopOf="@id/config">
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:text="Mastercard"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold"></TextView>
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:text="Gold"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"></TextView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/config3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text="Função"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold"></TextView>
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text="Débito e Crédito"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"></TextView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

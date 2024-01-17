@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ActivityPagarFatura">
+
+    <ImageButton
+        android:id="@+id/closePagarFatura"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_margin="20dp"
+        android:background="@null"
+        android:backgroundTint="@null"
+        android:scaleType="fitCenter"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#000000">
+    </ImageButton>
+
+    <TextView
+        android:id="@+id/textFatura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Você está pagando"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintTop_toBottomOf="@id/closePagarFatura"></TextView>
+
+    <TextView
+        android:id="@+id/faturaAPagar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="R$ 0,00"
+        android:textColor="@color/roxo"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textFatura"
+        app:layout_constraintTop_toBottomOf="@id/textFatura"></TextView>
+
+    <TextView
+        android:id="@+id/textFaturaTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Total da fatura fechada"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="@+id/faturaAPagar"
+        app:layout_constraintTop_toBottomOf="@id/faturaAPagar"></TextView>
+
+    <TextView
+        android:id="@+id/fatura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="R$ 0,00"
+        android:textSize="16dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/faturaAPagar"
+        app:layout_constraintEnd_toEndOf="parent"></TextView>
+
+
+    <View
+        android:id="@+id/viewPagarFatura"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/textFaturaTotal" />
+
+
+    <ImageView
+        android:id="@+id/imagePagarFatura"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/depositpordinheiro"
+        app:layout_constraintBottom_toBottomOf="@+id/viewPagarFatura"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/viewPagarFatura"></ImageView>
+
+
+    <TextView
+        android:id="@+id/textPagarFatura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pagar com saldo da conta"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toEndOf="@+id/imagePagarFatura"
+        app:layout_constraintTop_toTopOf="@+id/viewPagarFatura" />
+
+    <TextView
+        android:id="@+id/descricaoPagarFatura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="O saldo de R$ x é suficiente para\neste pagamento."
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewPagarFatura"
+        app:layout_constraintStart_toStartOf="@+id/textPagarFatura"
+        app:layout_constraintTop_toBottomOf="@+id/textPagarFatura" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

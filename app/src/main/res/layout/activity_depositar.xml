@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ActivityDepositar">
+
+    <ImageButton
+        android:id="@+id/closeDeposit"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_margin="10dp"
+        android:background="@null"
+        android:backgroundTint="@null"
+        android:scaleType="fitCenter"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#000000" />
+
+    <TextView
+        android:id="@+id/textDeposit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Como você quer depositar\nna conta do Nubank?"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/closeDeposit">
+    </TextView>
+    <View
+        android:id="@+id/viewDeEspaco"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        app:layout_constraintTop_toBottomOf="@id/textDeposit">
+
+    </View>
+    <ImageView
+        android:id="@+id/depositPorPix"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:scaleType="center"
+        android:src="@drawable/depositporpix"
+        android:adjustViewBounds="true"
+        android:layout_marginStart="13dp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewCardDepositPix"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewDeEspaco">
+    </ImageView>
+
+    <View
+        android:id="@+id/viewCardDepositPix"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        app:layout_constraintStart_toEndOf="@+id/depositPorPix"
+        app:layout_constraintTop_toBottomOf="@+id/viewDeEspaco" />
+
+    <TextView
+        android:id="@+id/textPix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Receber na hora em qualquer dia,\nsem custo."
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginStart="17dp"
+        app:layout_constraintBottom_toTopOf="@id/descricaoPix"
+        app:layout_constraintStart_toEndOf="@+id/depositPorPix"
+        app:layout_constraintTop_toTopOf="@+id/viewCardDepositPix" />
+
+    <TextView
+        android:id="@+id/descricaoPix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gere um código Pix, com ou sem chave\npara copiar e colar no seu banco."
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewCardDepositPix"
+        app:layout_constraintStart_toStartOf="@+id/textPix"
+        app:layout_constraintTop_toBottomOf="@+id/textPix" />
+
+    <ImageView
+        android:id="@+id/imageDepositDinheiro"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/depositpordinheiro"
+        app:layout_constraintBottom_toBottomOf="@+id/viewCardDepositDinheiro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewSeparaLista"></ImageView>
+    <View
+        android:id="@+id/viewSeparaLista"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/gray2"
+        app:layout_constraintTop_toBottomOf="@+id/viewCardDepositPix"/>
+    <View
+        android:id="@+id/viewCardDepositDinheiro"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        app:layout_constraintStart_toEndOf="@+id/imageDepositDinheiro"
+        app:layout_constraintTop_toBottomOf="@+id/viewSeparaLista" />
+
+    <TextView
+        android:id="@+id/textDepositDinheiro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Depositar em dinheiro"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginStart="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/descricaoDeposito"
+        app:layout_constraintStart_toEndOf="@+id/imageDepositDinheiro"
+        app:layout_constraintTop_toTopOf="@+id/viewCardDepositDinheiro" />
+
+    <TextView
+        android:id="@+id/descricaoDeposito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gere um boleto grátis para pagar\nem bancos e lotéricas."
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewCardDepositDinheiro"
+        app:layout_constraintStart_toStartOf="@+id/textDepositDinheiro"
+        app:layout_constraintTop_toBottomOf="@+id/textDepositDinheiro" />
+
+
+    <View
+        android:id="@+id/viewSeparaLista2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/gray2"
+        app:layout_constraintTop_toBottomOf="@+id/viewCardDepositDinheiro"/>
+
+    <ImageView
+        android:id="@+id/ImageDepositConta"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/depositporconta"
+        app:layout_constraintBottom_toBottomOf="@+id/viewCardDepositConta"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewSeparaLista2"></ImageView>
+
+
+    <View
+        android:id="@+id/viewCardDepositConta"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewSeparaLista2" />
+
+    <TextView
+        android:id="@+id/textDepositConta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Copiar dados da conta"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@id/ImageDepositConta"
+        app:layout_constraintBottom_toTopOf="@+id/descricaoDepositoConta"
+        app:layout_constraintTop_toTopOf="@+id/viewCardDepositConta" />
+
+    <TextView
+        android:id="@+id/descricaoDepositoConta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Usar os dados da sua conta para transferir\nusando Pix, TED e DOC."
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewCardDepositConta"
+        app:layout_constraintStart_toStartOf="@+id/textDepositConta"
+        app:layout_constraintTop_toBottomOf="@+id/textDepositConta" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

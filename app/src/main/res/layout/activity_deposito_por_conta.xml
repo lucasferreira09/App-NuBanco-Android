@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ActivityDepositoPorConta">
+
+    <ImageButton
+        android:id="@+id/closeDeposit"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_margin="20dp"
+        android:background="@null"
+        android:backgroundTint="@null"
+        android:scaleType="fitCenter"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#000000"/>
+
+    <TextView
+        android:id="@+id/textDados"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Dados da sua conta"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/closeDeposit"
+        app:layout_constraintTop_toBottomOf="@id/closeDeposit"></TextView>
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Utilize para fazer seu depósito"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintStart_toStartOf="@+id/textDados"
+        app:layout_constraintTop_toBottomOf="@id/textDados"></TextView>
+
+    <TextView
+        android:id="@+id/textAgencia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Agência"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintTop_toBottomOf="@id/text"></TextView>
+
+    <TextView
+        android:id="@+id/agencia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="xxx"
+        android:textSize="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintTop_toBottomOf="@id/textAgencia"></TextView>
+
+    <TextView
+        android:id="@+id/textConta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Conta"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintTop_toBottomOf="@id/agencia"></TextView>
+
+    <TextView
+        android:id="@+id/conta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="xxxxxxxx-x"
+        android:textSize="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintTop_toBottomOf="@id/textConta"></TextView>
+
+    <TextView
+        android:id="@+id/textNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nome"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintTop_toBottomOf="@id/conta"></TextView>
+
+    <TextView
+        android:id="@+id/nome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="nomeDaConta"
+        android:textSize="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintTop_toBottomOf="@id/textNome"></TextView>
+    <TextView
+        android:id="@+id/banco"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dados Bancários"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintTop_toBottomOf="@id/nome"></TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Nu Pagamentos S.A. -\nInstituição de Pagamento (0260)"
+        android:textSize="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintTop_toBottomOf="@id/banco"></TextView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

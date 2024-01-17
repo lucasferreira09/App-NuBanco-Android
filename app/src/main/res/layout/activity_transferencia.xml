@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ActivityTransferencia">
+
+    <ImageButton
+        android:id="@+id/closeTranferencia"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_margin="10dp"
+        android:background="@null"
+        android:backgroundTint="@null"
+        android:scaleType="fitCenter"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#000000">
+
+    </ImageButton>
+    <LinearLayout
+        android:id="@+id/linearSend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/closeTranferencia">
+
+        <TextView
+            android:id="@+id/textTransferenciaPix"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Qual é o valor da\ntransferência?"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:id="@+id/saldoDisponivel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Saldo disponível R$"
+            android:textColor="@color/black"
+            android:textSize="20dp"></TextView>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="30dp" />
+
+        <EditText
+            android:id="@+id/valorEnviar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="R$ 0,00"
+            android:inputType="numberDecimal"
+            android:text=""
+            android:textColor="@color/roxo"
+            android:textColorHint="@color/black"
+            android:textSize="30dp"
+            android:textStyle="bold"></EditText>
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/buttonTransferir"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/send"
+        android:contentDescription="TODO"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+    </ImageButton>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

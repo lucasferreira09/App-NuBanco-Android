@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ActivityDadosConta">
+
+    <View
+        android:id="@+id/firstView"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:background="@color/gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/sobre"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="13dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/sobredadosconta"
+        android:background="@null"
+        android:scaleType="centerInside"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintTop_toTopOf="@id/firstView"
+        app:layout_constraintEnd_toEndOf="@id/firstView"></ImageButton>
+
+    <ImageButton
+        android:id="@+id/closeDadosConta"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_margin="20dp"
+        android:background="@null"
+        android:backgroundTint="@null"
+        android:scaleType="fitCenter"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#000000"></ImageButton>
+
+    <ImageView
+        android:id="@+id/usuario"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/sobesobre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/closeDadosConta"></ImageView>
+
+    <TextView
+        android:id="@+id/olaNomeConta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lucas"
+        android:layout_marginStart="20dp"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/usuario"
+        app:layout_constraintTop_toTopOf="@+id/usuario">
+
+    </TextView>
+    <TextView
+        android:id="@+id/agencia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agência xxxx • "
+        android:layout_marginStart="20dp"
+        android:textSize="17dp"
+        app:layout_constraintStart_toEndOf="@+id/usuario"
+        app:layout_constraintTop_toBottomOf="@+id/olaNomeConta">
+    </TextView>
+    <TextView
+        android:id="@+id/conta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Conta xxxxxxxx-x"
+        android:textSize="17dp"
+        app:layout_constraintStart_toEndOf="@+id/agencia"
+        app:layout_constraintTop_toBottomOf="@+id/olaNomeConta"></TextView>
+
+    <TextView
+        android:id="@+id/banco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Banco 0260 • "
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="@+id/agencia"
+        app:layout_constraintTop_toBottomOf="@+id/agencia"></TextView>
+    <TextView
+        android:id="@+id/instit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nu Pagamentos S.A. -"
+        android:textSize="17dp"
+        app:layout_constraintStart_toEndOf="@+id/banco"
+        app:layout_constraintTop_toBottomOf="@+id/conta"></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Instituição de Pagamento"
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="@+id/banco"
+        app:layout_constraintTop_toBottomOf="@+id/banco"></TextView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">NuBanco</string>
+    <string name="sendTransfer">Nome, CPF/CNPJ ou chave Pix</string>
+    <string name="nomeUsuario"></string>
+    <string name="saldo"></string>
+    <string name="fatura"></string>
+    <string name="limiteCartao"></string>
+    <string name="limiteDisponivel"></string>
+    <string name="numeroCartao"></string>
+</resources>

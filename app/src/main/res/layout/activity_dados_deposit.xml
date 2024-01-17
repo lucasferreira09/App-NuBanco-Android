@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ActivityTransferencia3">
+
+    <ImageButton
+        android:id="@+id/closeDeposit"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_margin="10dp"
+        android:background="@null"
+        android:backgroundTint="@null"
+        android:scaleType="fitCenter"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#000000">
+
+    </ImageButton>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Confira os dados do\nDéposito"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/closeDeposit"></TextView>
+
+
+    <TextView
+        android:id="@+id/depositandoValor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="20dp"
+        android:text="R$ 0,00"
+        android:textColor="@color/roxo"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView"></TextView>
+
+    <LinearLayout
+        android:id="@+id/linearDados"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/depositandoValor">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:text="Chave Pix"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20dp"></TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:text="Nome"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20dp"></TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:text="Instituição"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20dp"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linearDados"
+        app:layout_constraintTop_toBottomOf="@+id/depositandoValor">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="20dp"
+            android:text="Chave Aleatória"
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:textSize="20dp"></TextView>
+
+        <TextView
+            android:id="@+id/nomeDaConta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="20dp"
+            android:text="Nome da Conta"
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:textSize="20dp"></TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="20dp"
+            android:text="NuBank"
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:textSize="20dp"></TextView>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/confirmaDeposito"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@null"
+        android:backgroundTint="@color/roxo"
+        android:text="Depositar"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

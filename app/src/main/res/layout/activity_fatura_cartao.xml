@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ActivityFaturaCartao">
+
+
+    <ImageButton
+        android:id="@+id/closeFaturaCartao"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_margin="10dp"
+        android:background="@null"
+        android:backgroundTint="@null"
+        android:scaleType="fitCenter"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#000000">
+
+    </ImageButton>
+
+    <View
+        android:id="@+id/view_fatura"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        app:layout_constraintTop_toBottomOf="@+id/closeFaturaCartao"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:id="@+id/linearFatura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@null"
+        android:layout_margin="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_fatura">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fatura atual"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/valorFatura"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="R$ 0,00"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/limiteDisponivelFatura"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Limite disponível R$ 0,00"
+            android:textSize="20dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Fecha em 04 JAN"
+            android:textStyle="bold"
+            android:textSize="20dp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnPagar"
+        android:layout_width="110dp"
+        android:layout_height="55dp"
+        android:background="@null"
+        android:backgroundTint="@color/red"
+        android:text="Pagar"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearFatura">
+
+    </Button>
+
+    <View
+        android:id="@+id/view_fatura2"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:layout_constraintTop_toBottomOf="@id/btnPagar"/>
+
+    <ImageButton
+        android:id="@+id/buttonPagar"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/bar"
+        android:background="@null"
+        android:scaleType="centerInside"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_fatura2"></ImageButton>
+
+    <TextView
+        android:id="@+id/textPagar"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="Pagar"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/buttonPagar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"></TextView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

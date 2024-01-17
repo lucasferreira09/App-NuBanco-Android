@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="black2">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="roxo">#820ad1</color>
+    <color name="template">#CFCFCF</color>
+    <color name="gray">#F2F2F2</color>
+    <color name="gray2">#CFCFCF</color>
+    <color name="cinzaNubank">#EBEBEB</color>
+    <color name="red">#FF363D</color>
+    <color name="roxoSemCartao">#AC6CC9</color>
+    <color name="tra">#f4f4f4</color>
+    <color name="corTelaInicial">#8F61E2</color>
+    <color name="corTelaInicial2">#BEACD2</color>
+
+
+
+</resources>
