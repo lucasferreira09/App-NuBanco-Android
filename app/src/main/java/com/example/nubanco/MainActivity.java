@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton btnPix;
     private ImageButton btnDeposit;
     private ImageButton btnTransfer;
+    private ImageButton btnPagar;
     private ImageButton abaCartaoCredito;
     private TextView ola;
     private TextView textLimiteDisponivel;
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
         saldoAtual = findViewById(R.id.saldoAtual);
         btnPix = findViewById(R.id.btnPix);
+        btnPagar = findViewById(R.id.btnPagar);
         btnDeposit = findViewById(R.id.btnDeposit);
         btnTransfer = findViewById(R.id.btnTransfer);
         abaCartaoCredito = findViewById(R.id.abaCartaoCredito);
@@ -99,6 +101,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(actvTransfer1);
+            }
+        });
+        btnPagar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "ESTA OPÇÃO NÃO\nESTÁ DISPONÍVEL", Toast.LENGTH_SHORT).show();
             }
         });
 

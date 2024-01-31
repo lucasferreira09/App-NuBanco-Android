@@ -12,8 +12,8 @@ import android.widget.Toast;
 
 public class ActivityCadastroUser extends AppCompatActivity {
 
-    //O usuário começará com R$ 1.000,00
-    public static Bank myBank = new Bank(1000.0);
+    //O usuário começará com R$ 2.000,00
+    public static Bank myBank = new Bank(2000.0);
     private ImageButton btnCadastrar;
     private EditText editPrimeiroNome;
     private EditText editSobrenome;

@@ -98,8 +98,8 @@ public class Bank {
     }
 
     public void setLimiteCreditoTotal() {
-        //Gera um valor entre 1000 e 2000;
-        Double limiteTotal = 1000.0 + (gerador.nextDouble()*1000);
+        //Gera um valor entre 5000 e 6000;
+        Double limiteTotal = 5000.0 + (gerador.nextDouble()*1000);
         limiteCreditoTotal = limiteTotal;
         limiteCreditoDisponivel = limiteTotal;
 
