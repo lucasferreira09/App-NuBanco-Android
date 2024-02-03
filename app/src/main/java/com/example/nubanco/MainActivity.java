@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
         btnPagar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "ESTA OPÇÃO NÃO\nESTÁ DISPONÍVEL", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "OPÇÃO NÃO DISPONÍVEL", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -198,7 +198,7 @@ public class MainActivity extends AppCompatActivity {
 
     public String formataValor(Double valor){
         Locale locale = new Locale("pt", "BR");
-        return NumberFormat.getInstance(locale).format(valor);
+        return NumberFormat.getCurrencyInstance(locale).format(valor);
     }
 
 }

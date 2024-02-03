@@ -71,7 +71,7 @@ public class ActivityPagarFatura extends AppCompatActivity {
 
     public String formataValor(Double valor){
         Locale locale = new Locale("pt", "BR");
-        return NumberFormat.getInstance(locale).format(valor);
+        return NumberFormat.getCurrencyInstance(locale).format(valor);
     }
     public void voltaActivityInicial() {
         finish();

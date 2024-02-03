@@ -44,6 +44,12 @@ public class ActivityDepositar extends AppCompatActivity {
                 startActivity(actvDepositConta);
             }
         });
+        viewCardDepositDinheiro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(ActivityDepositar.this, "OPÇÃO NÃO DISPONÍVEL", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         closeDeposit.setOnClickListener(new View.OnClickListener() {
             @Override
