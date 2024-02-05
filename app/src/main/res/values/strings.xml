@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NuBanco</string>
+    <string name="app_name">NuBanko</string>
     <string name="sendTransfer">Nome, CPF/CNPJ ou chave Pix</string>
     <string name="nomeUsuario"></string>
     <string name="saldo"></string>
