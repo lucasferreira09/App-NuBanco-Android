@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ActivityPrimeiraVez"
-    android:background="@drawable/firsttemplate">
+    android:background="@drawable/templatenub">
 
     <ImageView
         android:id="@+id/logoNu"
@@ -16,6 +16,22 @@
         android:src="@drawable/logo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/archivo_bold"
+        android:text="Um mundo\nfinanceiro sem\ncomplexidades"
+        android:textColor="@color/white"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="20dp"
+
+        app:layout_constraintBottom_toTopOf="@+id/btnComecar"
+
+        app:layout_constraintStart_toStartOf="@id/btnComecar"/>
 
     <Button
         android:id="@+id/btnComecar"
