@@ -1,5 +1,5 @@
 ![Projetinho-Nubank](https://github.com/lucasferreira09/App-NuBanco-Mobile/blob/b0f1503f5f937f008fbf7dd8afa78b99aaa8f8bc/VEJA%20O%20APP%20AQUI/Projetinho%20NuBank.png)
-![Tela-Cadastro](
-![Transferencia](
-![Comprovante](
-![cartao-credito](
+![Tela-Cadastro](https://github.com/lucasferreira09/App-NuBanco-Mobile/blob/b72118aff8595cae033c48fa85cac81a5ea91398/veja_o_app_aqui/tela_cadastro.png)
+![Transferencia](https://github.com/lucasferreira09/App-NuBanco-Mobile/blob/b72118aff8595cae033c48fa85cac81a5ea91398/veja_o_app_aqui/transferencia.png)
+![Comprovante](https://github.com/lucasferreira09/App-NuBanco-Mobile/blob/b72118aff8595cae033c48fa85cac81a5ea91398/veja_o_app_aqui/comprovante.png)
+![cartao-credito](https://github.com/lucasferreira09/App-NuBanco-Mobile/blob/b72118aff8595cae033c48fa85cac81a5ea91398/veja_o_app_aqui/cartao_credito.png)
