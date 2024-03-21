@@ -1,9 +1,10 @@
-package com.example.nubanco;
+package com.example.nubanco.contabancaria;
 
 import java.security.SecureRandom;
 
 public class Bank {
 
+    //Gera os n
     private SecureRandom gerador = new SecureRandom();
 
 
@@ -178,10 +179,6 @@ public class Bank {
         }
         numeroCartaoCredito = numeroCartao;
 
-    }
-
-    public void setValorFaturaAtual(Double valor){
-        valorFaturaAtual += valor;
     }
     public Double getValorFaturaAtual(){
         return valorFaturaAtual;

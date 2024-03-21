@@ -1,14 +1,17 @@
-package com.example.nubanco;
+package com.example.nubanco.cartaocredito;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.nubanco.contabancaria.ActivityCadastroUser;
+import com.example.nubanco.MainActivity;
+import com.example.nubanco.R;
 
 import java.text.NumberFormat;
 import java.util.Locale;

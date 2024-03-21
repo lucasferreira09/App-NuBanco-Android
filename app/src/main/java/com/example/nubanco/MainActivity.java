@@ -1,29 +1,24 @@
 package com.example.nubanco;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.WindowDecorActionBar;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.example.nubanco.Bank;
-import org.w3c.dom.Text;
 
-import java.io.Serializable;
-import java.util.ArrayList;
+import com.example.nubanco.cartaocredito.ActivityCartaoCredito;
+import com.example.nubanco.cartaocredito.ActivityFaturaCartao;
+import com.example.nubanco.cartaocredito.ActivityPedindoCartao;
+import com.example.nubanco.contabancaria.ActivityCadastroUser;
+import com.example.nubanco.contabancaria.ActivityDadosConta;
+import com.example.nubanco.deposito.ActivityDepositar;
+import com.example.nubanco.transferencia.ActivityTransferencia;
 
 import java.text.NumberFormat;
 import java.util.Locale;

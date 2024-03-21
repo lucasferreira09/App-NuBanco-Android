@@ -13,39 +13,39 @@
         android:theme="@style/Theme.NuBanco"
         tools:targetApi="30">
         <activity
-            android:name=".ActivityDepositoPorConta"
+            android:name=".deposito.ActivityDepositoPorConta"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ActivityPagarFatura"
+            android:name=".cartaocredito.ActivityPagarFatura"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ActivityDadosConta"
+            android:name=".contabancaria.ActivityDadosConta"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ActivitySemCartaoCredito"
+            android:name=".cartaocredito.ActivitySemCartaoCredito"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ActivityPedindoCartao"
+            android:name=".cartaocredito.ActivityPedindoCartao"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ActivityTransferenciaRealizada"
+            android:name=".transferencia.ActivityTransferenciaRealizada"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ActivityDadosDeposit"
+            android:name=".deposito.ActivityDadosDeposit"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ActivityDepositar"
+            android:name=".deposito.ActivityDepositar"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ActivityCadastroUser"
+            android:name=".contabancaria.ActivityCadastroUser"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
@@ -53,27 +53,27 @@
             android:exported="true"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".ActivityCartaoCredito"
+            android:name=".cartaocredito.ActivityCartaoCredito"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ActivityFaturaCartao"
+            android:name=".cartaocredito.ActivityFaturaCartao"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ActivityTransferencia3"
+            android:name=".transferencia.ActivityTransferencia3"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ActivityTransferencia2"
+            android:name=".transferencia.ActivityTransferencia2"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ActivityTransferencia"
+            android:name=".transferencia.ActivityTransferencia"
             android:exported="true"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".ActivityPrimeiraVez"
+            android:name=".contabancaria.ActivityPrimeiraVez"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>

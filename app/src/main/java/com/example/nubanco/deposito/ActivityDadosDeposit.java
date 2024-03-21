@@ -1,4 +1,4 @@
-package com.example.nubanco;
+package com.example.nubanco.deposito;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,7 +9,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
+import com.example.nubanco.MainActivity;
+import com.example.nubanco.R;
+import com.example.nubanco.contabancaria.ActivityCadastroUser;
 
 import java.text.NumberFormat;
 import java.util.Locale;

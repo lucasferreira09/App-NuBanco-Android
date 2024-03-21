@@ -5,18 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ActivityCadastroUser">
+    tools:context=".contabancaria.ActivityCadastroUser">
 
     <TextView
         android:id="@+id/textWelcome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp"
         android:layout_marginTop="30dp"
-        android:text="Boas-vindas ao NuBanko!\nPara começar, informe seus dados."
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/bem_vindo_nubanco"
         android:textSize="30dp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -24,42 +25,38 @@
 
     <TextView
         android:id="@+id/text"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp"
-        android:text="Precisamos dele para dar início ao seu\ncadastro"
+        android:text="@string/bem_vindo_dados_cadastro"
         android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textWelcome"
+        app:layout_constraintStart_toStartOf="@+id/textWelcome"
         app:layout_constraintTop_toBottomOf="@+id/textWelcome" />
+
     <EditText
         android:id="@+id/editPrimeiroNome"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
         android:hint="Primeiro nome:"
         android:inputType="text"
         android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textWelcome"
+        app:layout_constraintStart_toStartOf="@+id/textWelcome"
         app:layout_constraintTop_toBottomOf="@+id/text" />
+
     <EditText
         android:id="@+id/editSobrenome"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp"
         android:hint="Sobrenome:"
         android:inputType="text"
         android:textSize="20dp"
-        app:layout_constraintTop_toBottomOf="@id/editPrimeiroNome"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/textWelcome"
+        app:layout_constraintStart_toStartOf="@+id/editPrimeiroNome"
+        app:layout_constraintTop_toBottomOf="@id/editPrimeiroNome" />
 
     <ImageButton
         android:id="@+id/btnCadastrar"

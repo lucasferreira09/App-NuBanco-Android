@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ActivityDepositar">
+    tools:context=".deposito.ActivityDepositar">
 
     <ImageButton
         android:id="@+id/closeDeposit"
@@ -24,14 +24,14 @@
         android:id="@+id/textDeposit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Como você quer depositar\nna conta do Nubank?"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/escolha_deposito"
         android:textSize="30dp"
         android:textStyle="bold"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@id/closeDeposit">
-    </TextView>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/closeDeposit"></TextView>
     <View
         android:id="@+id/viewDeEspaco"
         android:layout_width="match_parent"

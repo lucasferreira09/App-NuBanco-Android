@@ -1,10 +1,7 @@
 <resources>
-    <string name="app_name">NuBanko</string>
+    <string name="app_name">NuBanco</string>
     <string name="sendTransfer">Nome, CPF/CNPJ ou chave Pix</string>
-    <string name="nomeUsuario"></string>
-    <string name="saldo"></string>
-    <string name="fatura"></string>
-    <string name="limiteCartao"></string>
-    <string name="limiteDisponivel"></string>
-    <string name="numeroCartao"></string>
+    <string name="bem_vindo_nubanco">Boas-vindas ao NuBanco!\nPara começar, informe seus dados."</string>
+    <string name="bem_vindo_dados_cadastro">Precisamos dele para dar início ao seu\ncadastro</string>
+    <string name="escolha_deposito">Como você quer depositar\nna conta do Nubank?</string>
 </resources>

@@ -1,13 +1,14 @@
-package com.example.nubanco;
+package com.example.nubanco.contabancaria;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import com.example.nubanco.R;
 
 public class ActivityDadosConta extends AppCompatActivity {
 

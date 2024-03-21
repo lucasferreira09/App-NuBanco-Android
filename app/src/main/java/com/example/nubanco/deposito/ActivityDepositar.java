@@ -1,16 +1,15 @@
-package com.example.nubanco;
+package com.example.nubanco.deposito;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
+
+import com.example.nubanco.R;
+import com.example.nubanco.transferencia.ActivityTransferencia;
 
 public class ActivityDepositar extends AppCompatActivity {
 

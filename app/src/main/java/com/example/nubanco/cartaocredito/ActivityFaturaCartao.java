@@ -1,4 +1,4 @@
-package com.example.nubanco;
+package com.example.nubanco.cartaocredito;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.nubanco.R;
 
 import java.text.NumberFormat;
 import java.util.Locale;

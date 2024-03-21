@@ -1,4 +1,4 @@
-package com.example.nubanco;
+package com.example.nubanco.contabancaria;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,9 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.Toast;
+
+import com.example.nubanco.MainActivity;
+import com.example.nubanco.R;
 
 public class ActivityCadastroUser extends AppCompatActivity {
 
