@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.nubanco.R;
 
+import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Locale;
 
@@ -84,6 +85,10 @@ public class ActivityFaturaCartao extends AppCompatActivity {
     }
     public String formataValor(Double valor){
         Locale locale = new Locale("pt", "BR");
-        return NumberFormat.getCurrencyInstance(locale).format(valor);
+        String padrao = "###,##0.00";
+        DecimalFormat decimalFormat = (DecimalFormat) NumberFormat.getNumberInstance(locale);
+        decimalFormat.applyPattern(padrao);
+
+        return decimalFormat.format(valor);
     }
 }

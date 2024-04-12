@@ -13,6 +13,7 @@ import com.example.nubanco.MainActivity;
 import com.example.nubanco.R;
 import com.example.nubanco.contabancaria.ActivityCadastroUser;
 
+import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Locale;
 
@@ -62,7 +63,12 @@ public class ActivityDadosDeposit extends AppCompatActivity {
         startActivity(intent);
     }
     public String formataValor(Double valor){
+
         Locale locale = new Locale("pt", "BR");
-        return NumberFormat.getInstance(locale).format(valor);
+        String padrao = "###,##0.00";
+        DecimalFormat decimalFormat = (DecimalFormat) NumberFormat.getNumberInstance(locale);
+        decimalFormat.applyPattern(padrao);
+
+        return decimalFormat.format(valor);
     }
 }

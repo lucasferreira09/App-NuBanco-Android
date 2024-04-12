@@ -20,6 +20,7 @@ import com.example.nubanco.contabancaria.ActivityDadosConta;
 import com.example.nubanco.deposito.ActivityDepositar;
 import com.example.nubanco.transferencia.ActivityTransferencia;
 
+import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Locale;
 
@@ -73,12 +74,12 @@ public class MainActivity extends AppCompatActivity {
         //Formata o saldo Ex.: 1.200,00
         Locale locale = new Locale("pt", "BR");
         Double meuSaldoDouble = ActivityCadastroUser.myBank.getSaldo();
-        String saldo = NumberFormat.getInstance(locale).format(meuSaldoDouble);
+        String saldo = formataValor(meuSaldoDouble);
         saldoAtual.setText("R$ " + saldo);
 
         String userPrimeiroNome = getIntent().getStringExtra("userPrimeiroNome");
         String userSobrenome = getIntent().getStringExtra("userSobrenome");
-        ola.setText("Olá, " + ActivityCadastroUser.myBank.getFirstName());
+        ola.setText("Olá, " + userPrimeiroNome);
         valorFatura.setText("R$ " + formataValor(ActivityCadastroUser.myBank.getValorFaturaAtual()));
 
         Intent actvTransfer1 = new Intent(MainActivity.this, ActivityTransferencia.class);
@@ -193,7 +194,12 @@ public class MainActivity extends AppCompatActivity {
 
     public String formataValor(Double valor){
         Locale locale = new Locale("pt", "BR");
-        return NumberFormat.getCurrencyInstance(locale).format(valor);
+        String padrao = "###,##0.00";
+        DecimalFormat decimalFormat = (DecimalFormat) NumberFormat.getNumberInstance(locale);
+        decimalFormat.applyPattern(padrao);
+
+        return decimalFormat.format(valor);
     }
+
 
 }

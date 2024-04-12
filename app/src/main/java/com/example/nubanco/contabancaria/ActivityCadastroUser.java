@@ -14,8 +14,8 @@ import com.example.nubanco.R;
 
 public class ActivityCadastroUser extends AppCompatActivity {
 
-    //O usuário começará com R$ 15.000,00
-    public static Bank myBank = new Bank(15000.0);
+    //O usuário começará com R$ 20.000,00
+    public static Bank myBank = new Bank(20000.0);
     private ImageButton btnCadastrar;
     private EditText editPrimeiroNome;
     private EditText editSobrenome;
@@ -43,15 +43,16 @@ public class ActivityCadastroUser extends AppCompatActivity {
                     editSobrenome.setError("INVÁLIDO");
                 }
                 else {
-                    String nome = editPrimeiroNome.getText().toString() + " " + editSobrenome.getText().toString();
+                    String nome = nomeFormatado(editPrimeiroNome.getText().toString()) + " " + nomeFormatado(editSobrenome.getText().toString());
+
                     myBank.setName(nome);//Define o Nome da conta
-                    myBank.setFirstName(editPrimeiroNome.getText().toString());
+                    myBank.setFirstName(nomeFormatado(editPrimeiroNome.getText().toString()));
                     myBank.setNumeroConta();//o Número da conta
                     myBank.setAgencia();//e a Agência
 
                     Intent actvInicio = new Intent(ActivityCadastroUser.this, MainActivity.class);
-                    actvInicio.putExtra("userPrimeiroNome", editPrimeiroNome.getText().toString());
-                    actvInicio.putExtra("userSobrenome", editSobrenome.getText().toString());
+                    actvInicio.putExtra("userPrimeiroNome", nomeFormatado(editPrimeiroNome.getText().toString()));
+                    actvInicio.putExtra("userSobrenome", nomeFormatado(editSobrenome.getText().toString()));
                     actvInicio.putExtra("agencia", ActivityCadastroUser.myBank.getAgencia());
                     startActivity(actvInicio);
                     finish();
@@ -59,5 +60,13 @@ public class ActivityCadastroUser extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public String nomeFormatado(String nome) {
+        String primeiraLetra = nome.substring(0, 1);
+        String nomeFormatado = primeiraLetra.toUpperCase() + nome.substring(1);
+
+        return nomeFormatado;
+
     }
 }
