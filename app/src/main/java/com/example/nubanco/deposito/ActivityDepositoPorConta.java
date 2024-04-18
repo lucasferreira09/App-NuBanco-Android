@@ -9,33 +9,30 @@ import android.widget.TextView;
 
 import com.example.nubanco.R;
 import com.example.nubanco.contabancaria.ActivityCadastroUser;
+import com.example.nubanco.databinding.ActivityDepositarBinding;
+import com.example.nubanco.databinding.ActivityDepositoPorContaBinding;
 
 public class ActivityDepositoPorConta extends AppCompatActivity {
 
-    private TextView nome;
-    private TextView agencia;
-    private TextView conta;
-    private ImageButton closeDeposit;
+    private ActivityDepositoPorContaBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_deposito_por_conta);
+        binding = ActivityDepositoPorContaBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
-        nome = findViewById(R.id.nome);
-        agencia = findViewById(R.id.agencia);
-        conta = findViewById(R.id.conta);
-        closeDeposit = findViewById(R.id.closeDeposit);
 
-        nome.setText(ActivityCadastroUser.myBank.getName());
-        agencia.setText(ActivityCadastroUser.myBank.getAgencia());
-        conta.setText(ActivityCadastroUser.myBank.getNumeroConta());
+        binding.nome.setText(ActivityCadastroUser.myBank.getName());
+        binding.agencia.setText(ActivityCadastroUser.myBank.getAgencia());
+        binding.conta.setText(ActivityCadastroUser.myBank.getNumeroConta());
 
-        closeDeposit.setOnClickListener(new View.OnClickListener() {
+        binding.closeDeposit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
-
     }
 }

@@ -12,6 +12,8 @@ import android.widget.TextView;
 import com.example.nubanco.contabancaria.ActivityCadastroUser;
 import com.example.nubanco.MainActivity;
 import com.example.nubanco.R;
+import com.example.nubanco.databinding.ActivityPagarFaturaBinding;
+import com.example.nubanco.databinding.ActivityPedindoCartaoBinding;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -19,28 +21,20 @@ import java.util.Locale;
 
 public class ActivityPedindoCartao extends AppCompatActivity {
 
-    private TextView valorLimite;
-    private Button obrigadoCredito;
-    private TextView textLiberamosLimit;
+    private ActivityPedindoCartaoBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pedindo_cartao);
+        binding = ActivityPedindoCartaoBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
+        binding.textLiberamosLimit.setText("Liberamos seu limite, " + ActivityCadastroUser.myBank.getFirstName());
 
-        valorLimite = findViewById(R.id.valorLimite);
-        obrigadoCredito = findViewById(R.id.obrigadoCredito);
-        textLiberamosLimit = findViewById(R.id.textLiberamosLimit);
-
-        textLiberamosLimit.setText("Liberamos seu limite, " + ActivityCadastroUser.myBank.getFirstName());
         //Cria o cartão de crédito
-        ActivityCadastroUser.myBank.setNumeroCartao();
-        ActivityCadastroUser.myBank.setCodigoCartao();
-        ActivityCadastroUser.myBank.setValidadeCartao();
-        ActivityCadastroUser.myBank.setLimiteCreditoTotal();
-        ActivityCadastroUser.myBank.setCartaoExiste(true);
-        valorLimite.setText("R$ " + formataValor(ActivityCadastroUser.myBank.getLimiteCreditoTotal()));
+        ActivityCadastroUser.myBank.geraCartãoCredito();
+        binding.valorLimite.setText("R$ " + formataValor(ActivityCadastroUser.myBank.getLimiteCreditoTotal()));
 
 
         //Botão Voltar fecha a Activity
@@ -52,7 +46,8 @@ public class ActivityPedindoCartao extends AppCompatActivity {
         };
         getOnBackPressedDispatcher().addCallback(this, callback);
 
-        obrigadoCredito.setOnClickListener(new View.OnClickListener() {
+
+        binding.obrigadoCredito.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 voltaActivityInicial();

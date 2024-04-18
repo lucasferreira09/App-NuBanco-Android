@@ -12,31 +12,25 @@ import android.widget.TextView;
 
 import com.example.nubanco.MainActivity;
 import com.example.nubanco.R;
+import com.example.nubanco.databinding.ActivityTransferencia3Binding;
+import com.example.nubanco.databinding.ActivityTransferenciaRealizadaBinding;
 
 import java.time.LocalTime;
 
 public class ActivityTransferenciaRealizada extends AppCompatActivity {
 
-    private TextView valorComprovante;
-    private ImageButton closeComprovante;
-    private ImageView imageComprovante;
-    private TextView horarioComprovante;
-    private TextView transferenciaRealizada;
-    private TextView descricaoPagamento;
-
+    private ActivityTransferenciaRealizadaBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_transferencia_realizada);
 
-        valorComprovante = findViewById(R.id.valorComprovante);
-        closeComprovante = findViewById(R.id.closeComprovante);
-        transferenciaRealizada = findViewById(R.id.transferenciaRealizada);
-        descricaoPagamento = findViewById(R.id.descricaoPagamento);
-        imageComprovante = findViewById(R.id.imageComprovante);
-        horarioComprovante = findViewById(R.id.horarioComprovante);
+        binding = ActivityTransferenciaRealizadaBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
+        //Bloqueia o botão físico do celular
+        //Só é permitido o botão da interface do aplicativo, igual o app Nubank original
         bloqueiBotaoVoltar();
 
         /*
@@ -50,16 +44,15 @@ public class ActivityTransferenciaRealizada extends AppCompatActivity {
         configuraNovoComprovante(getIntent().getStringExtra("novoTextoComprovante"), getIntent().getStringExtra("valorComprovante"));
 
         String comprovante = getIntent().getStringExtra("valorComprovante");
-        valorComprovante.setText("R$ " + comprovante);
-        horarioComprovante.setText("agora mesmo • " + horaDoSistema());
-        closeComprovante.setOnClickListener(new View.OnClickListener() {
+        binding.valorComprovante.setText("R$ " + comprovante);
+        binding.horarioComprovante.setText("agora mesmo • " + horaDoSistema());
+
+        binding.closeComprovante.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 voltaActivityInicial();
             }
         });
-
-
     }
 
     public void voltaActivityInicial() {
@@ -89,10 +82,11 @@ public class ActivityTransferenciaRealizada extends AppCompatActivity {
     }
 
     public void configuraNovoComprovante(String novoTextoComprovante, String valorComprovante) {
-        if (transferenciaRealizada != null && novoTextoComprovante != null) {
-            transferenciaRealizada.setText(novoTextoComprovante);
-            descricaoPagamento.setText("Recebemos o pagamento de "+valorComprovante+"\nreferente a sua fatura." );
-            imageComprovante.setImageResource((R.drawable.comprovantefatura));
+
+        if (binding.transferenciaRealizada != null && novoTextoComprovante != null) {
+            binding.transferenciaRealizada.setText(novoTextoComprovante);
+            binding.descricaoPagamento.setText("Recebemos o pagamento de " + valorComprovante + "\nreferente a sua fatura.");
+            binding.imageComprovante.setImageResource((R.drawable.comprovantefatura));
 
         }
     }
@@ -117,5 +111,4 @@ public class ActivityTransferenciaRealizada extends AppCompatActivity {
         }
         return horaFormatada;
     }
-
 }

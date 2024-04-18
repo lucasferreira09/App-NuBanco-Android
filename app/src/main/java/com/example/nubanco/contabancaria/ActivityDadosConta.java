@@ -9,34 +9,31 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.nubanco.R;
+import com.example.nubanco.databinding.ActivityDadosContaBinding;
+import com.example.nubanco.databinding.ActivityPrimeiraVezBinding;
 
 public class ActivityDadosConta extends AppCompatActivity {
 
-    private TextView olaNomeConta;
-    private TextView conta;
-    private TextView agencia;
-    private ImageButton closeDadosConta;
+    private ActivityDadosContaBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dados_conta);
+        binding = ActivityDadosContaBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
+        //Muda a cor da Status Bar
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             getWindow().setStatusBarColor(getColor(R.color.gray));
         }
 
-        olaNomeConta = findViewById(R.id.olaNomeConta);
-        conta = findViewById(R.id.conta);
-        agencia = findViewById(R.id.agencia);
-        closeDadosConta = findViewById(R.id.closeDadosConta);
-
-        olaNomeConta.setText(ActivityCadastroUser.myBank.getFirstName());
-        conta.setText("Conta " + ActivityCadastroUser.myBank.getNumeroConta());
-        agencia.setText("Agência " + ActivityCadastroUser.myBank.getAgencia() + " • ");
+        binding.olaNomeConta.setText(ActivityCadastroUser.myBank.getFirstName());
+        binding.conta.setText("Conta " + ActivityCadastroUser.myBank.getNumeroConta());
+        binding.agencia.setText("Agência " + ActivityCadastroUser.myBank.getAgencia() + " • ");
 
 
-        closeDadosConta.setOnClickListener(new View.OnClickListener() {
+        binding.closeDadosConta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();

@@ -11,6 +11,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.nubanco.R;
+import com.example.nubanco.databinding.ActivityCartaoCreditoBinding;
+import com.example.nubanco.databinding.ActivityFaturaCartaoBinding;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -18,35 +20,30 @@ import java.util.Locale;
 
 public class ActivityFaturaCartao extends AppCompatActivity {
 
-    private TextView valorFatura;
-    private TextView limiteDisponivelFatura;
-    private ImageButton buttonPagar;
-    private Button btnPagar;
-    private ImageButton closeFaturaCartao;
+    private ActivityFaturaCartaoBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fatura_cartao);
 
-        valorFatura = findViewById(R.id.valorFatura);
-        limiteDisponivelFatura = findViewById(R.id.limiteDisponivelFatura);
-        buttonPagar = findViewById(R.id.buttonPagar);
-        closeFaturaCartao = findViewById(R.id.closeFaturaCartao);
-        btnPagar = findViewById(R.id.btnPagar);
+        binding = ActivityFaturaCartaoBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
+
 
         Double fatura = getIntent().getDoubleExtra("valorFatura", 0);
         Double meuSaldoDisponivel = getIntent().getDoubleExtra("meuSaldoDouble", 0);
 
+        binding.valorFatura.setText("R$ " + formataValor(Double.valueOf(fatura)));
+        binding.limiteDisponivelFatura.setText("Limite disponível " +
+                formataValor(getIntent().getDoubleExtra("meuLimiteDisponivel", 0)));
 
-        valorFatura.setText("R$ " + formataValor(Double.valueOf(fatura)));
-        limiteDisponivelFatura.setText("Limite disponível " + formataValor(getIntent().getDoubleExtra("meuLimiteDisponivel", 0)));
-
-        buttonPagar.setOnClickListener(new View.OnClickListener() {
+        binding.buttonPagar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if (fatura == 0.0) {
-                    buttonPagar.setEnabled(false);
+                    binding.buttonPagar.setEnabled(false);
                     Toast.makeText(ActivityFaturaCartao.this, "SEM FATURA NO MOMENTO", Toast.LENGTH_SHORT).show();
                 }
                 else{
@@ -55,15 +52,15 @@ public class ActivityFaturaCartao extends AppCompatActivity {
                     actvPagandoFatura.putExtra("meuSaldoDisponivel", meuSaldoDisponivel);
                     startActivity(actvPagandoFatura);
                 }
-
             }
         });
+
         //FAZ O MESMO QUE O buttonPagar (Logo Acima)
-        btnPagar.setOnClickListener(new View.OnClickListener() {
+        binding.btnPagar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (fatura == 0.0) {
-                    buttonPagar.setEnabled(false);
+                    binding.buttonPagar.setEnabled(false);
                     Toast.makeText(ActivityFaturaCartao.this, "SEM FATURA NO MOMENTO", Toast.LENGTH_SHORT).show();
                 }
                 else{
@@ -75,14 +72,14 @@ public class ActivityFaturaCartao extends AppCompatActivity {
             }
         });
 
-        closeFaturaCartao.setOnClickListener(new View.OnClickListener() {
+        binding.closeFaturaCartao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
-
     }
+
     public String formataValor(Double valor){
         Locale locale = new Locale("pt", "BR");
         String padrao = "###,##0.00";

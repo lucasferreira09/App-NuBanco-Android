@@ -10,31 +10,24 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.nubanco.databinding.ActivityTransferenciaBinding;
 import com.example.nubanco.deposito.ActivityDadosDeposit;
 import com.example.nubanco.R;
 
 public class ActivityTransferencia extends AppCompatActivity {
 
-    private ImageButton buttonTransferir;
-    private EditText valorEnviar;
-    private TextView saldoDisponivel;
-    private TextView textTransferenciaPix;
-    private ImageButton closeTranferencia;
-
+    private ActivityTransferenciaBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_transferencia);
+
+        binding = ActivityTransferenciaBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
         Double meuSaldoDouble = getIntent().getDoubleExtra("meuSaldoDouble", 0);
         String meuSaldoFormatado = getIntent().getStringExtra("meuSaldoFormatado");
-
-        buttonTransferir = findViewById(R.id.buttonTransferir);
-        valorEnviar = findViewById(R.id.valorEnviar);
-        saldoDisponivel = findViewById(R.id.saldoDisponivel);
-        textTransferenciaPix = findViewById(R.id.textTransferenciaPix);
-        closeTranferencia = findViewById(R.id.closeTranferencia);
 
         /*
         Aqui, essa Activity foi reaproveitada pela a Activity de déposito.
@@ -44,23 +37,25 @@ public class ActivityTransferencia extends AppCompatActivity {
         */
         configurarTexto(getIntent().getStringExtra("metodoDeposito"));
 
-        saldoDisponivel.setText("Saldo disponível R$ " + meuSaldoFormatado);
-        buttonTransferir.setOnClickListener(new View.OnClickListener() {
+        binding.saldoDisponivel.setText("Saldo disponível R$ " + meuSaldoFormatado);
+        binding.buttonTransferir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (textTransferenciaPix.getText().toString().equals(
+                if (binding.textTransferenciaPix.getText().toString().equals(
                         getIntent().getStringExtra("metodoDeposito"))) {
+
                     Intent actvDepositDados = new Intent(ActivityTransferencia.this, ActivityDadosDeposit.class);
-                    actvDepositDados.putExtra("valorDepositado", valorEnviar.getText().toString());
+                    actvDepositDados.putExtra("valorDepositado", binding.valorEnviar.getText().toString());
                     startActivity(actvDepositDados);
 
                 }
                 else {
-                    if (TextUtils.isEmpty(valorEnviar.getText())){
-                        valorEnviar.setError("Número Inválido");
+                    if (TextUtils.isEmpty(binding.valorEnviar.getText())){
+                        binding.valorEnviar.setError("Número Inválido");
                     }
                     else {
-                        Double valorEnviado = Double.parseDouble(valorEnviar.getText().toString());
+                        Double valorEnviado = Double.parseDouble(binding.valorEnviar.getText().toString());
+
                         Intent actvTransf2= new Intent(ActivityTransferencia.this, ActivityTransferencia2.class);
                         actvTransf2.putExtra("valorTransferidoDouble", valorEnviado);
                         actvTransf2.putExtra("meuSaldo", meuSaldoDouble);
@@ -70,7 +65,7 @@ public class ActivityTransferencia extends AppCompatActivity {
             }
     });
 
-        closeTranferencia.setOnClickListener(new View.OnClickListener() {
+        binding.closeTranferencia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
@@ -80,11 +75,11 @@ public class ActivityTransferencia extends AppCompatActivity {
     }
 
     public void configurarTexto(String novoTexto) {
-        if (textTransferenciaPix != null && novoTexto != null) {
-            textTransferenciaPix.setText(novoTexto);
+        if (binding.textTransferenciaPix != null && novoTexto != null) {
+            binding.textTransferenciaPix.setText(novoTexto);
 
             //Como será Depósito, não é preciso mostrar o saldo
-            saldoDisponivel.setVisibility(View.INVISIBLE);
+            binding.saldoDisponivel.setVisibility(View.INVISIBLE);
         }
     }
 

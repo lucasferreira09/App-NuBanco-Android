@@ -11,48 +11,49 @@ import android.widget.ImageButton;
 
 import com.example.nubanco.MainActivity;
 import com.example.nubanco.R;
+import com.example.nubanco.databinding.ActivityCadastroUserBinding;
+import com.example.nubanco.databinding.ActivityDadosContaBinding;
 
 public class ActivityCadastroUser extends AppCompatActivity {
 
     //O usuário começará com R$ 20.000,00
     public static Bank myBank = new Bank(20000.0);
-    private ImageButton btnCadastrar;
-    private EditText editPrimeiroNome;
-    private EditText editSobrenome;
 
+    private ActivityCadastroUserBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cadastro_user);
+        binding = ActivityCadastroUserBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
-        btnCadastrar = findViewById(R.id.btnCadastrar);
-        editPrimeiroNome = findViewById(R.id.editPrimeiroNome);
-        editSobrenome = findViewById(R.id.editSobrenome);
-
-
-
-        btnCadastrar.setOnClickListener(new View.OnClickListener() {
+        binding.btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (TextUtils.isEmpty(editPrimeiroNome.getText())){
-                    editPrimeiroNome.setError("INVÁLIDO");
+                if (TextUtils.isEmpty(binding.editPrimeiroNome.getText())){
+                    binding.editPrimeiroNome.setError("INVÁLIDO");
 
                 }
-                else if (TextUtils.isEmpty(editSobrenome.getText())){
-                    editSobrenome.setError("INVÁLIDO");
+                else if (TextUtils.isEmpty(binding.editSobrenome.getText())){
+                    binding.editSobrenome.setError("INVÁLIDO");
                 }
                 else {
-                    String nome = nomeFormatado(editPrimeiroNome.getText().toString()) + " " + nomeFormatado(editSobrenome.getText().toString());
+
+                    String nome = nomeFormatado(
+                            binding.editPrimeiroNome.getText().toString()) + " " +
+                            nomeFormatado(binding.editSobrenome.getText().toString());
+
+                    String primeiroNome = nomeFormatado(binding.editPrimeiroNome.getText().toString());
 
                     myBank.setName(nome);//Define o Nome da conta
-                    myBank.setFirstName(nomeFormatado(editPrimeiroNome.getText().toString()));
+                    myBank.setFirstName(primeiroNome);
                     myBank.setNumeroConta();//o Número da conta
                     myBank.setAgencia();//e a Agência
 
                     Intent actvInicio = new Intent(ActivityCadastroUser.this, MainActivity.class);
-                    actvInicio.putExtra("userPrimeiroNome", nomeFormatado(editPrimeiroNome.getText().toString()));
-                    actvInicio.putExtra("userSobrenome", nomeFormatado(editSobrenome.getText().toString()));
+                    actvInicio.putExtra("userPrimeiroNome", primeiroNome);
+                    actvInicio.putExtra("userSobrenome", nomeFormatado(binding.editSobrenome.getText().toString()));
                     actvInicio.putExtra("agencia", ActivityCadastroUser.myBank.getAgencia());
                     startActivity(actvInicio);
                     finish();

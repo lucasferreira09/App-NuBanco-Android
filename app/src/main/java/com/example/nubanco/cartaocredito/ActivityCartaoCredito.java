@@ -9,30 +9,27 @@ import android.widget.TextView;
 
 import com.example.nubanco.contabancaria.ActivityCadastroUser;
 import com.example.nubanco.R;
+import com.example.nubanco.databinding.ActivityCadastroUserBinding;
+import com.example.nubanco.databinding.ActivityCartaoCreditoBinding;
 
 public class ActivityCartaoCredito extends AppCompatActivity {
 
-    private TextView nomeCartao;
-    private TextView validadeCartao;
-    private ImageButton closecartaoCredito;
-    private TextView numeroCartao;
+    private ActivityCartaoCreditoBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cartao_credito);
 
-        validadeCartao = findViewById(R.id.validadeCartao);
-        nomeCartao = findViewById(R.id.nomeCartao);
-        closecartaoCredito = findViewById(R.id.closeCartaoCredito);
-        numeroCartao = findViewById(R.id.numeroCartao);
+        binding = ActivityCartaoCreditoBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
+
+        binding.validadeCartao.setText(ActivityCadastroUser.myBank.getDataValidadeCartao());
+        binding.nomeCartao.setText(ActivityCadastroUser.myBank.getName());
+        binding.numeroCartao.setText(ActivityCadastroUser.myBank.getNumeroCartaoCredito());
 
 
-        validadeCartao.setText(ActivityCadastroUser.myBank.getDataValidadeCartao());
-        nomeCartao.setText(ActivityCadastroUser.myBank.getName());
-        numeroCartao.setText(ActivityCadastroUser.myBank.getNumeroCartaoCredito());
-
-        closecartaoCredito.setOnClickListener(new View.OnClickListener() {
+        binding.closeCartaoCredito.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();

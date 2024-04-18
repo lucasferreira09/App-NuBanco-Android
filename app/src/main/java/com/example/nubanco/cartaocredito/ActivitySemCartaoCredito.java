@@ -9,25 +9,27 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.nubanco.R;
+import com.example.nubanco.databinding.ActivityPedindoCartaoBinding;
+import com.example.nubanco.databinding.ActivitySemCartaoCreditoBinding;
 
 public class ActivitySemCartaoCredito extends AppCompatActivity {
 
-    private Button buttonQueroCartao;
-    private Button buttonNaoQuerCartao;
+    private ActivitySemCartaoCreditoBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sem_cartao_credito);
+        binding = ActivitySemCartaoCreditoBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
+
 
         //Muda a cor da Status Bar
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             getWindow().setStatusBarColor(getColor(R.color.roxoSemCartao));
         }
-        buttonQueroCartao = findViewById(R.id.buttonQueroCartao);
-        buttonNaoQuerCartao = findViewById(R.id.buttonNaoQuerCartao);
 
-        buttonQueroCartao.setOnClickListener(new View.OnClickListener() {
+        binding.buttonQueroCartao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent actvPedindoCartao = new Intent(ActivitySemCartaoCredito.this, ActivityPedindoCartao.class);
@@ -35,7 +37,7 @@ public class ActivitySemCartaoCredito extends AppCompatActivity {
 
             }
         });
-        buttonNaoQuerCartao.setOnClickListener(new View.OnClickListener() {
+        binding.buttonNaoQuerCartao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();

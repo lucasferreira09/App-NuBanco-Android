@@ -12,6 +12,8 @@ import android.widget.Toast;
 import com.example.nubanco.MainActivity;
 import com.example.nubanco.R;
 import com.example.nubanco.contabancaria.ActivityCadastroUser;
+import com.example.nubanco.databinding.ActivityDadosDepositBinding;
+import com.example.nubanco.databinding.ActivityTransferenciaRealizadaBinding;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -19,26 +21,23 @@ import java.util.Locale;
 
 public class ActivityDadosDeposit extends AppCompatActivity {
 
-    private TextView depositandoValor;
-    private TextView nomeDaConta;
-    private Button confirmaDeposito;
+    private ActivityDadosDepositBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dados_deposit);
+        binding = ActivityDadosDepositBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
 
-        depositandoValor = findViewById(R.id.depositandoValor);
-        nomeDaConta = findViewById(R.id.nomeDaConta);
-        confirmaDeposito = findViewById(R.id.confirmaDeposito);
-
-        nomeDaConta.setText(ActivityCadastroUser.myBank.getName());
+        binding.nomeDaConta.setText(ActivityCadastroUser.myBank.getName());
         Double depositando = Double.valueOf(getIntent().getStringExtra("valorDepositado"));
 
-        depositandoValor.setText("R$ " + formataValor(depositando));
-        nomeDaConta.setText(ActivityCadastroUser.myBank.getName());
+        binding.depositandoValor.setText("R$ " + formataValor(depositando));
+        binding.nomeDaConta.setText(ActivityCadastroUser.myBank.getName());
 
-        confirmaDeposito.setOnClickListener(new View.OnClickListener() {
+        binding.confirmaDeposito.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ActivityCadastroUser.myBank.deposit(depositando);
@@ -47,6 +46,7 @@ public class ActivityDadosDeposit extends AppCompatActivity {
             }
         });
     }
+
     public void voltaActivityInicial() {
         /*
         É preciso se certificar que quando o depósito for realizado, o usuário
@@ -62,6 +62,7 @@ public class ActivityDadosDeposit extends AppCompatActivity {
         // Inicia a atividade principal
         startActivity(intent);
     }
+
     public String formataValor(Double valor){
 
         Locale locale = new Locale("pt", "BR");

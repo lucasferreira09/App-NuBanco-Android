@@ -94,6 +94,14 @@ public class Bank {
 
 
     //MÉTODOS CARTÃO CRÉDITO
+    public void geraCartãoCredito() {
+        this.setNumeroCartao();
+        this.setCodigoCartao();
+        this.setValidadeCartao();
+        this.setLimiteCreditoTotal();
+        this.setCartaoExiste(true);
+    }
+
     public boolean getCartaoExiste(){
         return cartaoExiste;
     }

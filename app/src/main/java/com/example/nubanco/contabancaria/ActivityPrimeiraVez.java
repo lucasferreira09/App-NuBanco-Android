@@ -9,24 +9,26 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.nubanco.R;
+import com.example.nubanco.databinding.ActivityDepositoPorContaBinding;
+import com.example.nubanco.databinding.ActivityPrimeiraVezBinding;
 
 public class ActivityPrimeiraVez extends AppCompatActivity {
 
-    private Button btnComecar;
+    private ActivityPrimeiraVezBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_primeira_vez);
+        binding = ActivityPrimeiraVezBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
         //Muda a cor da Status Bar
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             getWindow().setStatusBarColor(getColor(R.color.corTelaInicial2));
         }
 
-        btnComecar = findViewById(R.id.btnComecar);
-
-        btnComecar.setOnClickListener(new View.OnClickListener() {
+        binding.btnComecar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent actvCadastro = new Intent(ActivityPrimeiraVez.this, ActivityCadastroUser.class);

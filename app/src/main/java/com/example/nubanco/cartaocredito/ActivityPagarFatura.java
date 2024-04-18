@@ -9,6 +9,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.nubanco.contabancaria.ActivityCadastroUser;
+import com.example.nubanco.databinding.ActivityFaturaCartaoBinding;
+import com.example.nubanco.databinding.ActivityPagarFaturaBinding;
 import com.example.nubanco.transferencia.ActivityTransferenciaRealizada;
 import com.example.nubanco.MainActivity;
 import com.example.nubanco.R;
@@ -19,37 +21,32 @@ import java.util.Locale;
 
 public class ActivityPagarFatura extends AppCompatActivity {
 
-    private View viewPagarFatura;
-    private ImageButton closePagarFatura;
-    private TextView faturaAPagar;
-    private TextView fatura;
-    private TextView descricaoPagarFatura;
+    private ActivityPagarFaturaBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pagar_fatura);
-        viewPagarFatura = findViewById(R.id.viewPagarFatura);
-        closePagarFatura = findViewById(R.id.closePagarFatura);
-        faturaAPagar = findViewById(R.id.faturaAPagar);
-        fatura= findViewById(R.id.fatura);
-        descricaoPagarFatura = findViewById(R.id.descricaoPagarFatura);
-
+        binding = ActivityPagarFaturaBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
 
         Double valorFatura = getIntent().getDoubleExtra("valorFatura", 0);
         Double meuSaldoDouble = getIntent().getDoubleExtra("meuSaldoDisponivel", 0);
-        faturaAPagar.setText("R$ " + formataValor(valorFatura));
-        fatura.setText("R$ " + formataValor(valorFatura));
 
-        if ( valorFatura > meuSaldoDouble){
-            descricaoPagarFatura.setText("O saldo de R$ " + formataValor(meuSaldoDouble) + " não é suficiente para\neste pagamento.");
-            viewPagarFatura.setEnabled(false);
+        binding.faturaAPagar.setText("R$ " + formataValor(valorFatura));
+        binding.fatura.setText("R$ " + formataValor(valorFatura));
+
+        if (valorFatura > meuSaldoDouble) {
+            binding.descricaoPagarFatura.setText(
+                    "O saldo de R$ " + formataValor(meuSaldoDouble) + " não é suficiente para\neste pagamento.");
+            binding.viewPagarFatura.setEnabled(false);
+        } else {
+            binding.descricaoPagarFatura.setText(
+                    "O saldo de R$ " + formataValor(meuSaldoDouble) + " é suficiente para\neste pagamento.");
         }
-        else{
-            descricaoPagarFatura.setText("O saldo de R$ " + formataValor(meuSaldoDouble) + " é suficiente para\neste pagamento.");
-        }
-        viewPagarFatura.setOnClickListener(new View.OnClickListener() {
+
+        binding.viewPagarFatura.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ActivityCadastroUser.myBank.pagarFatura(valorFatura);
@@ -62,7 +59,7 @@ public class ActivityPagarFatura extends AppCompatActivity {
             }
 
         });
-        closePagarFatura.setOnClickListener(new View.OnClickListener() {
+        binding.closePagarFatura.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
@@ -72,7 +69,7 @@ public class ActivityPagarFatura extends AppCompatActivity {
     }
 
 
-    public String formataValor(Double valor){
+    public String formataValor(Double valor) {
         Locale locale = new Locale("pt", "BR");
         String padrao = "###,##0.00";
         DecimalFormat decimalFormat = (DecimalFormat) NumberFormat.getNumberInstance(locale);
@@ -80,6 +77,7 @@ public class ActivityPagarFatura extends AppCompatActivity {
 
         return decimalFormat.format(valor);
     }
+
     public void voltaActivityInicial() {
         finish();
         // Criar um novo intent para a atividade principal
