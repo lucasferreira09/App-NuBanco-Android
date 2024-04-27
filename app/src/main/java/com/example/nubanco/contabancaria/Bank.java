@@ -1,10 +1,12 @@
 package com.example.nubanco.contabancaria;
 
 import java.security.SecureRandom;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 public class Bank {
 
-    //Gera os n
     private SecureRandom gerador = new SecureRandom();
 
 
@@ -49,8 +51,11 @@ public class Bank {
     public void setSaldo(Double saldo) {
         this.saldo = saldo;
     }
-    public Double getSaldo() {
+    public Double getSaldoDouble() {
         return saldo;
+    }
+    public String getSaldoFormatado() {
+        return this.formataValor(this.saldo);
     }
 
     public void setNumeroConta(){
@@ -198,5 +203,13 @@ public class Bank {
         limiteCreditoDisponivel += valor;
     }
 
+    public String formataValor(Double valor){
+        Locale locale = new Locale("pt", "BR");
+        String padrao = "###,##0.00";
+        DecimalFormat decimalFormat = (DecimalFormat) NumberFormat.getNumberInstance(locale);
+        decimalFormat.applyPattern(padrao);
+
+        return decimalFormat.format(valor);
+    }
 
 }

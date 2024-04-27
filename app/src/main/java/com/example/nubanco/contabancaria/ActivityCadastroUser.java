@@ -17,7 +17,7 @@ import com.example.nubanco.databinding.ActivityDadosContaBinding;
 public class ActivityCadastroUser extends AppCompatActivity {
 
     //O usuário começará com R$ 20.000,00
-    public static Bank myBank = new Bank(20000.0);
+    public static Bank myBank = new Bank(15700.0);
 
     private ActivityCadastroUserBinding binding;
 

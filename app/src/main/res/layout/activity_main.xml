@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,337 +8,227 @@
     tools:context=".MainActivity"
     tools:ignore="ExtraText">
 
-    <View
-        android:id="@+id/firstView"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:background="@color/roxo"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:layout_height="match_parent">
 
-    <ImageButton
-        android:id="@+id/usuario"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/user"
-        android:scaleType="centerInside"
-        android:background="@null"
-        app:layout_constraintLeft_toLeftOf="@id/firstView"
-        app:layout_constraintTop_toTopOf="@id/firstView"></ImageButton>
-
-    <TextView
-        android:id="@+id/ola"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Olá"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        app:layout_constraintStart_toStartOf="@+id/usuario"
-        app:layout_constraintTop_toBottomOf="@+id/usuario"></TextView>
-    <ImageButton
-        android:id="@+id/ocultaSaldo"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:src="@drawable/ocultasaldo"
-        android:background="@null"
-        android:scaleType="centerInside"
-        android:layout_marginEnd="50dp"
-        android:layout_marginTop="25dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/sobre"></ImageButton>
-
-    <ImageButton
-        android:id="@+id/sobre"
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:src="@drawable/sobree"
-        android:background="@null"
-        android:scaleType="centerInside"
-        android:layout_marginEnd="30dp"
-        android:layout_marginTop="30dp"
-        app:layout_constraintStart_toEndOf="@+id/ocultaSaldo"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-    </ImageButton>
-    <LinearLayout
-        android:id="@+id/linear_account"
-        android:layout_width="match_parent"
-        android:layout_height="110dp"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/firstView">
-        <TextView
-            android:id="@+id/text_conta"
+        <View
+            android:id="@+id/firstView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:text="Conta"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp">
-        </TextView>
-        <TextView
-            android:id="@+id/saldoAtual"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:text="R$"
-            android:layout_marginLeft="20dp">
-        </TextView>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linear_actions"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/linear_account"
-        >
-        <ImageButton
-            android:id="@+id/btnPix"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:src="@drawable/pixbolinha"
-            android:background="@null"
-            android:scaleType="centerInside"
-            android:layout_marginLeft="20dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/linear_account">
-        </ImageButton>
-
-        <View
-            android:layout_width="30dp"
-            android:layout_height="wrap_content"/>
-        <ImageButton
-            android:id="@+id/btnPagar"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:background="@null"
-            android:scaleType="centerInside"
-            android:src="@drawable/bar"
-            app:layout_constraintLeft_toLeftOf="@id/btnPix"
-            app:layout_constraintTop_toBottomOf="@id/linear_account">
-        </ImageButton>
-
-        <View
-            android:layout_width="30dp"
-            android:layout_height="wrap_content"/>
+            android:layout_height="150dp"
+            android:background="@color/roxo"
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <ImageButton
-            android:id="@+id/btnDeposit"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:src="@drawable/transf"
-            android:background="@null"
-            android:scaleType="centerInside"
-            app:layout_constraintLeft_toLeftOf="@id/btnPagar"
-            app:layout_constraintTop_toBottomOf="@id/linear_account">
-        </ImageButton>
-        <View
-            android:layout_width="30dp"
-            android:layout_height="wrap_content"/>
-        <ImageButton
-            android:id="@+id/btnTransfer"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:src="@drawable/transferencaconta"
-            android:background="@null"
-            android:scaleType="centerInside"
-            app:layout_constraintLeft_toLeftOf="@id/btnDeposit"
-            app:layout_constraintTop_toBottomOf="@id/linear_account">
-        </ImageButton>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linear1"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:orientation="horizontal"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        app:layout_constraintTop_toBottomOf="@id/linear_actions">
-        <TextView
-            android:id="@+id/text_pix"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
-            android:text="Área Pix"
-            android:textSize="16dp"
-            android:textStyle="bold"
-            android:layout_marginLeft="20dp"
-            android:textColor="@color/black">
-        </TextView>
-
-        <View
-            android:layout_width="30dp"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:id="@+id/text_pagar"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:text="Pagar"
-            android:textSize="16dp"
-            android:textStyle="bold"
-            android:textColor="@color/black">
-        </TextView>
-        <View
-            android:layout_width="15dp"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:id="@+id/text_deposit"
+            android:id="@+id/usuario"
             android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:text="Depositar"
-            android:textSize="16dp"
-            android:textStyle="bold"
-            android:textColor="@color/black">
-        </TextView>
-        <View
-            android:layout_width="14dp"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:id="@+id/text_transferir"
-            android:layout_width="90dp"
-            android:layout_height="wrap_content"
-            android:text="Transferir"
-            android:textSize="16dp"
-            android:textStyle="bold"
-            android:textColor="@color/black">
-        </TextView>
-
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/imageCard"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
-        android:background="@drawable/view_cartao_credito"
-        android:layout_margin="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/linear1">
-
-        <ImageView
-            android:id="@+id/imageMyCard"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginBottom="3dp"
-            android:src="@drawable/newcard">
-
-        </ImageView>
+            android:layout_height="80dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/user"
+            android:scaleType="centerInside"
+            android:background="@null"
+            app:layout_constraintLeft_toLeftOf="@id/firstView"
+            app:layout_constraintTop_toTopOf="@id/firstView"></ImageButton>
 
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/ola"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Meus Cartões"
-            android:textSize="16dp"
+            android:text="Olá"
+            android:textColor="@color/white"
+            android:textSize="20dp"
             android:textStyle="bold"
-            android:layout_marginTop="20dp"
-            android:textColor="@color/black">
-        </TextView>
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toStartOf="@+id/usuario"
+            app:layout_constraintTop_toBottomOf="@+id/usuario"></TextView>
+        <ImageButton
+            android:id="@+id/ocultaSaldo"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ocultasaldo"
+            android:background="@null"
+            android:scaleType="centerInside"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="25dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/sobre"></ImageButton>
 
-    </LinearLayout>
+        <ImageButton
+            android:id="@+id/sobre"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/sobree"
+            android:background="@null"
+            android:scaleType="centerInside"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toEndOf="@+id/ocultaSaldo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
-    <View
-        android:layout_marginTop="25dp"
-        android:id="@+id/aboveCard"
-        android:layout_width="match_parent"
-        android:background="@color/gray2"
-        android:layout_height="1dp"
-        app:layout_constraintTop_toBottomOf="@id/imageCard" />
-
-    <LinearLayout
-        android:id="@+id/linear_credit_card"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="8dp"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/aboveCard">
-
+        </ImageButton>
         <LinearLayout
-            android:id="@+id/linearCard"
+            android:id="@+id/linear_account"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:backgroundTint="#101010"
-            android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@id/aboveCard">
-
+            android:layout_height="110dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/firstView">
             <TextView
-                android:id="@+id/pedeCartao"
-                android:layout_width="300dp"
+                android:id="@+id/text_conta"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="30dp"
-                android:text="Pedir cartão de Crédito"
-                android:textColor="@color/black"
                 android:textSize="20dp"
-                android:textStyle="bold"></TextView>
-            <ImageButton
-                android:id="@+id/abaCartaoCredito"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="20dp"
-                android:scaleType="centerInside"
-                android:background="#FFFFFF"
-                android:layout_marginTop="33dp"
-                app:srcCompat="@drawable/secondseta"></ImageButton>
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="Conta"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp">
+            </TextView>
+            <TextView
+                android:id="@+id/saldoAtual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="R$"
+                android:layout_marginLeft="20dp">
+            </TextView>
+
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/textFaturaAtual"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp"
-            android:text="Fatura Atual"
-            android:textSize="20dp"
+            android:padding="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearCard"></TextView>
+            app:layout_constraintTop_toBottomOf="@id/linear_account" />
 
-        <TextView
-            android:id="@+id/valorFatura"
+
+        <LinearLayout
+            android:id="@+id/imageCard"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:text="R$ 0"
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textFaturaAtual"></TextView>
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:background="@drawable/view_cartao_credito"
+            android:layout_margin="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerView">
 
-        <TextView
-            android:id="@+id/textLimiteDisponivel"
+            <ImageView
+                android:id="@+id/imageMyCard"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:src="@drawable/newcard">
+
+            </ImageView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Meus Cartões"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/black">
+            </TextView>
+
+        </LinearLayout>
+
+        <View
+            android:layout_marginTop="25dp"
+            android:id="@+id/aboveCard"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:text="Limite disponível R$ 0"
-            android:textSize="17dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/valorFatura"></TextView>
+            android:background="@color/gray2"
+            android:layout_height="1dp"
+            app:layout_constraintTop_toBottomOf="@id/imageCard" />
 
-    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linear_credit_card"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/aboveCard">
 
-    <View
-        android:layout_marginTop="25dp"
-        android:layout_width="match_parent"
-        android:background="@color/gray2"
-        android:layout_height="1dp"
-        app:layout_constraintTop_toBottomOf="@id/linear_credit_card" />
+            <LinearLayout
+                android:id="@+id/linearCard"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:backgroundTint="#101010"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/aboveCard">
 
+                <TextView
+                    android:id="@+id/pedeCartao"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Pedir cartão de Crédito"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold"></TextView>
+                <ImageButton
+                    android:id="@+id/abaCartaoCredito"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="20dp"
+                    android:scaleType="centerInside"
+                    android:background="#FFFFFF"
+                    android:layout_marginTop="33dp"
+                    app:srcCompat="@drawable/secondseta"></ImageButton>
+            </LinearLayout>
 
+            <TextView
+                android:id="@+id/textFaturaAtual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:text="Fatura Atual"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearCard"></TextView>
 
+            <TextView
+                android:id="@+id/valorFatura"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="R$ 0"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textFaturaAtual"></TextView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/textLimiteDisponivel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Limite disponível R$ 0"
+                android:textSize="17dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/valorFatura"></TextView>
+
+        </LinearLayout>
+
+        <View
+            android:layout_marginTop="25dp"
+            android:layout_width="match_parent"
+            android:background="@color/gray2"
+            android:layout_height="1dp"
+            app:layout_constraintTop_toBottomOf="@id/linear_credit_card" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
