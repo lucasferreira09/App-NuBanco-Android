@@ -41,14 +41,24 @@
         app:layout_constraintTop_toTopOf="parent"
         app:tint="#000000"></ImageButton>
 
-    <ImageView
-        android:id="@+id/usuario"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="50dp"
-        android:src="@drawable/sobesobre"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewUsuario"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:shape="ring"
+        app:cardCornerRadius="50dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="62dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/closeDadosConta"></ImageView>
+        app:layout_constraintTop_toTopOf="@id/closeDadosConta">
+
+        <ImageView
+            android:id="@+id/usuario"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:background="@drawable/usuario"></ImageView>
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/olaNomeConta"
@@ -59,8 +69,8 @@
         android:textColor="@color/black"
         android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/usuario"
-        app:layout_constraintTop_toTopOf="@+id/usuario">
+        app:layout_constraintStart_toEndOf="@+id/cardViewUsuario"
+        app:layout_constraintTop_toTopOf="@+id/cardViewUsuario">
 
     </TextView>
     <TextView
@@ -70,7 +80,7 @@
         android:text="Agência xxxx • "
         android:layout_marginStart="20dp"
         android:textSize="17dp"
-        app:layout_constraintStart_toEndOf="@+id/usuario"
+        app:layout_constraintStart_toEndOf="@+id/cardViewUsuario"
         app:layout_constraintTop_toBottomOf="@+id/olaNomeConta">
     </TextView>
     <TextView

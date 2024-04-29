@@ -17,32 +17,41 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:background="@color/roxo"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp" />
 
-        <ImageButton
-            android:id="@+id/usuario"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="8dp"
-            android:src="@drawable/user"
-            android:scaleType="centerInside"
-            android:background="@null"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewUsuario"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:shape="ring"
+            app:cardCornerRadius="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
             app:layout_constraintLeft_toLeftOf="@id/firstView"
-            app:layout_constraintTop_toTopOf="@id/firstView"></ImageButton>
+            app:layout_constraintTop_toTopOf="@id/firstView">
+
+            <ImageView
+                android:id="@+id/usuario"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:background="@drawable/usuario"></ImageView>
+        </androidx.cardview.widget.CardView>
+
 
         <TextView
             android:id="@+id/ola"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="24dp"
             android:text="Olá"
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"
-            app:layout_constraintStart_toStartOf="@+id/usuario"
-            app:layout_constraintTop_toBottomOf="@+id/usuario"></TextView>
+            app:layout_constraintStart_toStartOf="@+id/cardViewUsuario"
+            app:layout_constraintTop_toBottomOf="@+id/cardViewUsuario"></TextView>
         <ImageButton
             android:id="@+id/ocultaSaldo"
             android:layout_width="50dp"
@@ -74,23 +83,38 @@
         <LinearLayout
             android:id="@+id/linear_account"
             android:layout_width="match_parent"
-            android:layout_height="110dp"
+            android:layout_height="100dp"
             android:orientation="vertical"
             app:layout_constraintTop_toBottomOf="@id/firstView">
-            <TextView
-                android:id="@+id/text_conta"
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:text="Conta"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp">
-            </TextView>
+                android:orientation="horizontal"
+                android:paddingLeft="20dp"
+                android:paddingTop="20dp">
+
+                <TextView
+                    android:id="@+id/text_conta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:text="Conta"/>
+                <ImageButton
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:scaleType="centerInside"
+                    android:background="#FFFFFF"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginTop="4dp"
+                    app:srcCompat="@drawable/secondseta"/>
+            </LinearLayout>
             <TextView
                 android:id="@+id/saldoAtual"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textStyle="bold"
@@ -131,7 +155,7 @@
             </ImageView>
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Meus Cartões"
                 android:textSize="16dp"
@@ -159,48 +183,48 @@
             app:layout_constraintTop_toBottomOf="@id/aboveCard">
 
             <LinearLayout
-                android:id="@+id/linearCard"
+                android:id="@+id/abaCartaoCredito"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:backgroundTint="#101010"
                 android:orientation="horizontal"
+                android:paddingLeft="20dp"
+                android:paddingTop="30dp"
                 app:layout_constraintTop_toBottomOf="@id/aboveCard">
 
                 <TextView
                     android:id="@+id/pedeCartao"
-                    android:layout_width="300dp"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="30dp"
                     android:text="Pedir cartão de Crédito"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold"></TextView>
                 <ImageButton
-                    android:id="@+id/abaCartaoCredito"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_marginStart="20dp"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
                     android:scaleType="centerInside"
                     android:background="#FFFFFF"
-                    android:layout_marginTop="33dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginTop="4dp"
                     app:srcCompat="@drawable/secondseta"></ImageButton>
             </LinearLayout>
 
             <TextView
                 android:id="@+id/textFaturaAtual"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="20dp"
                 android:text="Fatura Atual"
                 android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearCard"></TextView>
+                app:layout_constraintTop_toBottomOf="@+id/abaCartaoCredito"></TextView>
 
             <TextView
                 android:id="@+id/valorFatura"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:text="R$ 0"
@@ -212,7 +236,7 @@
 
             <TextView
                 android:id="@+id/textLimiteDisponivel"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
