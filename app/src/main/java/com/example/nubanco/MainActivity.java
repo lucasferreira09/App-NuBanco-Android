@@ -11,6 +11,7 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -36,7 +37,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 
-
 public class MainActivity extends AppCompatActivity implements ClickAcoesBancaria {
 
     private ActivityMainBinding binding;
@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements ClickAcoesBancari
             getWindow().setStatusBarColor(getColor(R.color.roxo));
         }
 
+
         implementasAcoesBancarias();
 
         Locale locale = new Locale("pt", "BR");
@@ -69,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements ClickAcoesBancari
 
 
         //Muda o texto do Cartão caso, o usuário já tenha pedido
-        if (ActivityCadastroUser.myBank.getCartaoExiste() == true){
+        if (ActivityCadastroUser.myBank.getCartaoExiste()){
             binding.pedeCartao.setText("Cartão de Crédito");
         }
 
@@ -81,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements ClickAcoesBancari
             @Override
             public void onClick(View v) {
                 //Caso o usuário ainda não tenha pedidio Cartão
-                if (ActivityCadastroUser.myBank.getCartaoExiste() == false){
+                if (!ActivityCadastroUser.myBank.getCartaoExiste()){
                     Intent actvPedirCartao = new Intent(MainActivity.this, ActivityPedindoCartao.class);
                     startActivity(actvPedirCartao);
                 }
@@ -99,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements ClickAcoesBancari
             @Override
             public void onClick(View v) {
                 //A aba Meus Cartões só está disponível se o Cartão existir
-                if (ActivityCadastroUser.myBank.getCartaoExiste() == true){
+                if (ActivityCadastroUser.myBank.getCartaoExiste()){
                     verCartaoCredito();
                 }
                 else{
@@ -114,7 +115,7 @@ public class MainActivity extends AppCompatActivity implements ClickAcoesBancari
             public void onClick(View v) {
                 //Se o botão Oculta Saldo tá desativado,
                 // ele é ativado e o saldo da conta é ocultado.
-                if (ocultaSaldoEsta == false){
+                if (!ocultaSaldoEsta){
                     binding.saldoAtual.setText("••••");
                     binding.valorFatura.setText("••••");
                     binding.textLimiteDisponivel.setText("Limite Disponível R$ ••••");

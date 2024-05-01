@@ -3,6 +3,7 @@ package com.example.nubanco.contabancaria;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -50,6 +51,7 @@ public class ActivityCadastroUser extends AppCompatActivity {
                     myBank.setFirstName(primeiroNome);
                     myBank.setNumeroConta();//o Número da conta
                     myBank.setAgencia();//e a Agência
+
 
                     Intent actvInicio = new Intent(ActivityCadastroUser.this, MainActivity.class);
                     actvInicio.putExtra("userPrimeiroNome", primeiroNome);

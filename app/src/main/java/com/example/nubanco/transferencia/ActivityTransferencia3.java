@@ -57,7 +57,7 @@ public class ActivityTransferencia3 extends AppCompatActivity {
                 escolhaTransferencia = 2;
 
                 //Se não tiver Cartão, é redirecionado para pedir um
-                if (ActivityCadastroUser.myBank.getCartaoExiste() == false){
+                if (!ActivityCadastroUser.myBank.getCartaoExiste()){
                     startActivity(new Intent(ActivityTransferencia3.this, ActivitySemCartaoCredito.class));
                 }
             }
