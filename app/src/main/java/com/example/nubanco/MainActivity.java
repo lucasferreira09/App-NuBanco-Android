@@ -153,7 +153,7 @@ public class MainActivity extends AppCompatActivity implements ClickAcoesBancari
         acaoBancarias.add(new AcaoBancaria(R.drawable.recarga, "Recarga de\ncelular", "recarga"));
         acaoBancarias.add(new AcaoBancaria(R.drawable.transf, "Depositar", "deposito"));
         acaoBancarias.add(new AcaoBancaria(R.drawable.transferencaconta, "Transferir", "transferencia"));
-        acaoBancarias.add(new AcaoBancaria(R.drawable.deposito_auto, "Depósito\nAutomático", "deposito_auto"));
+        acaoBancarias.add(new AcaoBancaria(R.drawable.auto_deposito, "Depósito\nAutomático", "auto_deposito"));
 
         AdapterAcoes adapterAcoes = new AdapterAcoes(acaoBancarias, this, this);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL,false);
@@ -254,7 +254,7 @@ public class MainActivity extends AppCompatActivity implements ClickAcoesBancari
                 Toast.makeText(MainActivity.this, "OPÇÃO NÃO DISPONÍVEL", Toast.LENGTH_SHORT).show();
                 break;
 
-            case ("deposito_auto"):
+            case ("auto_deposito"):
                 Random random = new Random();
                 Double valorRecebido = 200 + random.nextDouble()*100;
                 this.criaNotificacao(valorRecebido);
