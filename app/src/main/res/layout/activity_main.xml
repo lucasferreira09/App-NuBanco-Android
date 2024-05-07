@@ -17,8 +17,9 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:background="@color/roxo"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="0dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardViewUsuario"
@@ -77,52 +78,51 @@
             android:layout_marginTop="30dp"
             app:layout_constraintStart_toEndOf="@+id/ocultaSaldo"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintEnd_toEndOf="parent"></ImageButton>
 
-        </ImageButton>
         <LinearLayout
             android:id="@+id/linear_account"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/firstView">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingLeft="20dp"
-                android:paddingTop="20dp">
+                android:padding="20dp">
 
                 <TextView
                     android:id="@+id/text_conta"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
+                    android:text="Conta"
                     android:textColor="@color/black"
-                    android:text="Conta"/>
+                    android:textSize="20dp"
+                    android:textStyle="bold"></TextView>
+
                 <ImageButton
                     android:layout_width="16dp"
                     android:layout_height="16dp"
-                    android:scaleType="centerInside"
-                    android:background="#FFFFFF"
-                    android:layout_marginEnd="24dp"
                     android:layout_marginTop="4dp"
-                    app:srcCompat="@drawable/secondseta"/>
+                    android:background="#FFFFFF"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/secondseta"></ImageButton>
             </LinearLayout>
+
             <TextView
                 android:id="@+id/saldoAtual"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
+                android:layout_marginLeft="20dp"
                 android:text="R$"
-                android:layout_marginLeft="20dp">
-            </TextView>
-
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -139,9 +139,11 @@
             android:id="@+id/imageCard"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:orientation="horizontal"
-            android:background="@drawable/view_cartao_credito"
             android:layout_margin="20dp"
+            android:background="@drawable/view_cartao_credito"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/recyclerView">
 
             <ImageView
@@ -150,19 +152,16 @@
                 android:layout_height="55dp"
                 android:layout_marginTop="3dp"
                 android:layout_marginBottom="3dp"
-                android:src="@drawable/newcard">
-
-            </ImageView>
+                android:src="@drawable/newcard"></ImageView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Meus Cartões"
-                android:textSize="16dp"
-                android:textStyle="bold"
                 android:layout_marginTop="20dp"
-                android:textColor="@color/black">
-            </TextView>
+                android:text="Meus Cartões"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold"></TextView>
 
         </LinearLayout>
 
@@ -180,6 +179,8 @@
             android:layout_height="200dp"
             android:layout_marginTop="8dp"
             android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/aboveCard">
 
             <LinearLayout
@@ -195,19 +196,20 @@
                 <TextView
                     android:id="@+id/pedeCartao"
                     android:layout_width="wrap_content"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="Pedir cartão de Crédito"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold"></TextView>
+
                 <ImageButton
                     android:layout_width="16dp"
                     android:layout_height="16dp"
-                    android:scaleType="centerInside"
-                    android:background="#FFFFFF"
-                    android:layout_marginEnd="24dp"
                     android:layout_marginTop="4dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="#FFFFFF"
+                    android:scaleType="centerInside"
                     app:srcCompat="@drawable/secondseta"></ImageButton>
             </LinearLayout>
 
@@ -215,8 +217,8 @@
                 android:id="@+id/textFaturaAtual"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
                 android:text="Fatura Atual"
                 android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -244,7 +246,6 @@
                 android:textSize="17dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/valorFatura"></TextView>
-
         </LinearLayout>
 
         <View
